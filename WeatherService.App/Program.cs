@@ -11,6 +11,7 @@ builder.Services.AddRazorPages();
 //test
 
 builder.Services.AddTransient<IWeatherService, WeatherStackService>();
+var test = "test";
 builder.Services.AddHttpClient();
 
 var app = builder.Build();
