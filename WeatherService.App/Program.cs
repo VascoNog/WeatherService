@@ -8,6 +8,8 @@ builder.Services.AddRazorPages();
 // . AddSingleton
 // . AddTransient
 
+//test
+
 builder.Services.AddTransient<IWeatherService, WeatherStackService>();
 builder.Services.AddHttpClient();
 
