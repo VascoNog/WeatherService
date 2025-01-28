@@ -1,4 +1,6 @@
-﻿namespace WeatherService.App.Models;
+﻿using System.Text.Json.Serialization;
+
+namespace WeatherService.App.Models;
 
 public class WeatherStackStructure
 {
@@ -20,10 +22,10 @@ public class Location
     public string Name { get; set; }
     public string Country { get; set; }
     public string Region { get; set; }
-    public double Lat { get; set; }
-    public double Lon { get; set; }
+    public string Lat { get; set; }
+    public string Lon { get; set; }
     public string TimezoneId { get; set; }
-    public DateTime Localtime { get; set; }
+    public string Localtime { get; set; }
     public long LocaltimeEpoch { get; set; }
     public string UtcOffset { get; set; }
 }
@@ -31,8 +33,10 @@ public class Location
 public class Current
 {
     public string ObservationTime { get; set; }
-    public int Temperature { get; set; }
+    public double Temperature { get; set; }
     public int WeatherCode { get; set; }
+    
+    [JsonPropertyName ("weather_icons")]
     public List<string> WeatherIcons { get; set; }
     public List<string> WeatherDescriptions { get; set; }
     public int WindSpeed { get; set; }

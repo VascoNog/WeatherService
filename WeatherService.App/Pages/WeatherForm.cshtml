@@ -1,0 +1,37 @@
+﻿@page
+@model WeatherFormModel
+@{
+     //var weather = Model.MyWeather;
+}
+
+<hr />
+@if (Model.MyWeather is not null)
+    {
+    <ul>
+        <li>Country: @Model.MyWeather.Country</li>
+        <li>Region: @Model.MyWeather.Region</li>
+        <li>Temperature: @Model.MyWeather.Temperature</li>
+        <li>Lat: @Model.MyWeather.Lat</li>
+        <li>Lon: @Model.MyWeather.Lon</li>
+        <li>UpdatetAt:@Model.MyWeather.UpdatedAt </li>
+        <li> <img src="@Model.MyWeather.Icon" /> </li>
+    </ul>
+    }
+    else
+    {
+        <div class="text-danger">No Weather Data Found</div>
+    }
+<hr />
+
+
+<form method="post">
+    <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" asp-for="City" placeholder="Enter city"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+
+
+
